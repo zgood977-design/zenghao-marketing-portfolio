@@ -18,11 +18,11 @@
 <dialog class="video-dialog" id="videoDialog"><div class="dialog-shell"><button class="close" aria-label="关闭视频窗口">×</button><div class="video-stage"><video id="player" controls playsinline preload="metadata"></video></div><div class="video-copy"><div><div class="ey">VIDEO PORTFOLIO</div><h2 id="videoTitle"></h2></div><p id="videoDescription"></p></div><div class="playlist" id="playlist"></div><p class="video-note">提示：视频文件需置于网站的 videos 文件夹；如使用云端视频，可在代码中替换为对应链接。</p></div></dialog>
 <script>
 const collections={
- aigc:{title:'AIGC 宣传片',description:'AI 生成影像、节日主题视觉与创意宣传内容。',clips:[['粽子创意 · 版本一','videos/aigc/zongzi-2.mp4'],['粽子创意 · 版本二','videos/aigc/zongzi-3.mp4'],['喜鹊谋杀案模仿','videos/aigc/magpie-murder.mp4'],['岷江山川创意','videos/aigc/minjiang-creative.mp4'],['洲和纪事 · 第一章','videos/aigc/zhouhe-01.mp4'],['洲和纪事 · 第四章','videos/aigc/zhouhe-04.mp4']]},
- wedding:{title:'婚宴活动传播',description:'婚宴场景、氛围布置与仪式感内容的现场记录。',clips:[['婚宴现场 · 八月三日','videos/wedding/august-03.mp4'],['红色主题婚宴','videos/wedding/red-wedding.mp4'],['香囊主题婚宴','videos/wedding/sachet-wedding.mp4']]},
- brand:{title:'品牌与空间体验',description:'酒店品牌、节日营销与空间体验短片。',clips:[['女神节宣传','videos/brand/womens-day.mp4'],['劳动节出游','videos/brand/labor-day.mp4']]},
- western:{title:'西餐内容视觉',description:'西餐自助、酒水创意与餐饮氛围的短视频内容。',clips:[['丰盛西餐自助','videos/western/buffet-rich.mp4'],['酒水创意','videos/western/drink-creative.mp4'],['七月二十一日','videos/western/july-21.mp4'],['可乐气泡柠檬美式','videos/western/lemon-americano.mp4']]},
- chinese:{title:'中餐厅内容矩阵',description:'菜品、节日、餐厅体验与主题布置的连续内容创作。',clips:[['端午节莫氏','videos/chinese/dragon-boat.mp4'],['中餐厅成人礼布置','videos/chinese/`coming-of-age.mp4'],['岷江山川宣传','videos/chinese/minjiang.mp4'],['宫保鸡丁','videos/chinese/kungpao.mp4']]}
+ aigc:{title:'AIGC 宣传片',description:'AI 生成影像、节日主题视觉与创意宣传内容。',clips:[['粽子创意 · 版本一','zongzi-2.mp4'],['粽子创意 · 版本二','zongzi-3.mp4'],['喜鹊谋杀案模仿','magpie-murder.mp4'],['岷江山川创意','minjiang-creative.mp4'],['洲和纪事 · 第一章','zhouhe-01.mp4'],['洲和纪事 · 第四章','zhouhe-04.mp4']]},
+ wedding:{title:'婚宴活动传播',description:'婚宴场景、氛围布置与仪式感内容的现场记录。',clips:[['婚宴现场 · 八月三日','august-03.mp4'],['红色主题婚宴','red-wedding.mp4'],['香囊主题婚宴','sachet-wedding.mp4']]},
+ brand:{title:'品牌与空间体验',description:'酒店品牌、节日营销与空间体验短片。',clips:[['女神节宣传','womens-day.mp4'],['劳动节出游','labor-day.mp4']]},
+ western:{title:'西餐内容视觉',description:'西餐自助、酒水创意与餐饮氛围的短视频内容。',clips:[['丰盛西餐自助','buffet-rich.mp4'],['酒水创意','drink-creative.mp4'],['七月二十一日','videos/western/july-21.mp4'],['可乐气泡柠檬美式','lemon-americano.mp4']]},
+ chinese:{title:'中餐厅内容矩阵',description:'菜品、节日、餐厅体验与主题布置的连续内容创作。',clips:[['端午节莫氏','dragon-boat.mp4'],['中餐厅成人礼布置','`coming-of-age.mp4'],['岷江山川宣传','minjiang.mp4'],['宫保鸡丁','kungpao.mp4']]}
 };
 const dialog=document.querySelector('#videoDialog'),player=document.querySelector('#player'),title=document.querySelector('#videoTitle'),description=document.querySelector('#videoDescription'),playlist=document.querySelector('#playlist');
 function openCollection(key){const c=collections[key];title.textContent=c.title;description.textContent=c.description;playlist.innerHTML='';c.clips.forEach(([name,src],i)=>{const b=document.createElement('button');b.className='clip';b.textContent=(i+1)+'. '+name;b.onclick=()=>play(src,name,b);playlist.append(b)});dialog.showModal();playlist.querySelector('button').click()}
