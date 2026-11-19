@@ -19,6 +19,7 @@ body{font-size:16px}nav{font-size:14px}nav a{margin-left:23px;color:var(--muted)
 .project-card .watch{font-size:14px}.group-label{font-size:18px;font-weight:700;margin:34px 0 18px;border-left:3px solid var(--accent);padding-left:15px}
 .project-card.wide{grid-column:1/-1;grid-template-columns:1.05fr .95fr;min-height:385px}.project-card.wide .body{justify-content:center;padding:50px}
 .project-card.wide .body .watch{margin-top:26px}.website-card{grid-template-columns:35% 65%}.website-card .pic img{object-position:top}
+.qr-inline{display:flex;align-items:center;gap:14px;margin-top:25px;font-size:13px;color:var(--muted)}.qr-inline img{width:94px;height:94px;object-fit:contain;border:1px solid var(--line);padding:5px;background:#fff}.website-card .site-actions .watch{margin-top:0}
 .site-actions{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:21px}.site-actions .watch{margin-top:0}.site-actions a{font-size:14px;font-weight:700;color:var(--accent);border-bottom:1px solid currentColor;padding-bottom:4px}
 .exposure{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0;margin:10px auto 95px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .exposure p{margin:8px 0 0;color:var(--muted);font-size:15px}.exposure strong{font:42px Georgia;color:var(--ink);white-space:nowrap}
@@ -71,7 +72,7 @@ body{font-size:16px}nav{font-size:14px}nav a{margin-left:23px;color:var(--muted)
 
 <section class="w" id="web">
   <div class="head"><div><div class="ey">WEBSITE PROJECT</div><h2>网站项目</h2></div><p>将酒店周边地点与活动内容整合为可浏览的互动页面。</p></div>
-  <article class="project-card wide website-card"><div class="pic"><img src="assets/canopy-website-01.jpg" alt="嘉悦里周边地图网站手机页面" loading="lazy"></div><div class="body"><small>INTERACTIVE CITY GUIDE</small><h3>嘉悦里周边地图</h3><p>以手绘地图为入口，轻点地标可浏览对应的地点内页。项目包含地图视觉、活动内容与移动端网站页面。</p><div class="site-actions"><a href="https://zgood977-design.github.io/canopy-chengdu-interactive-map/" target="_blank" rel="noopener noreferrer">打开网站</a><button class="watch" data-gallery="website"><i>＋</i>查看页面与地图</button></div></div></article>
+  <article class="project-card wide website-card"><div class="pic"><img src="assets/canopy-website-01.jpg" alt="嘉悦里周边地图网站手机页面" loading="lazy"></div><div class="body"><small>INTERACTIVE CITY GUIDE</small><h3>嘉悦里周边地图</h3><p>以手绘地图为入口，轻点地标可浏览对应的地点内页。项目包含地图视觉、活动内容与移动端网站页面。</p><div class="site-actions"><a href="https://canopychengdu2026.github.io/jiayueli-map/?v=20261106" target="_blank" rel="noopener noreferrer">打开网站</a><button class="watch" data-gallery="website"><i>＋</i>查看页面与地图</button></div><div class="qr-inline"><a href="https://canopychengdu2026.github.io/jiayueli-map/?v=20261106" target="_blank" rel="noopener noreferrer" aria-label="扫码或点击打开嘉悦里周边地图"><img src="assets/canopy-map-qr.png" alt="嘉悦里周边地图网站二维码" loading="lazy"></a><span>手机扫码查看嘉悦里周边地图</span></div></div></article>
 </section>
 
 <div class="w"><div class="exposure"><div><div class="ey">INSTAGRAM EXPOSURE</div><p>个人海外短视频内容项目；保留与内容传播相关的曝光成果。</p></div><strong>558万+</strong></div></div>
@@ -104,7 +105,7 @@ const galleries={
  menu:{title:'餐饮菜单设计',items:[['assets/canopy-menu-01.jpg','素食菜单外侧'],['assets/canopy-menu-02.jpg','素食菜单内侧']]},
  comic:{title:'集团主题漫画',items:[['assets/canopy-comic-01.jpg','封面'],['assets/canopy-comic-02.jpg','第2页'],['assets/canopy-comic-03.jpg','第3页'],['assets/canopy-comic-04.jpg','第4页'],['assets/canopy-comic-05.jpg','第5页'],['assets/canopy-comic-06.jpg','第6页'],['assets/canopy-comic-07.jpg','第7页'],['assets/canopy-comic-08.jpg','第8页'],['assets/canopy-comic-09.jpg','补充画面']]},
  map:{title:'成都活动地图',items:[['assets/canopy-map.jpg','完整手绘地图']]},
- website:{title:'嘉悦里周边地图网站',items:[['assets/canopy-website-01.jpg','移动端网站截图'],['assets/canopy-map.jpg','完整手绘地图'],['assets/canopy-website-02.jpg','项目二维码']]}
+ website:{title:'嘉悦里周边地图网站',items:[['assets/canopy-website-01.jpg','移动端网站截图'],['assets/canopy-map.jpg','完整手绘地图'],['assets/canopy-map-qr.png','网站二维码']]}
 };
 const videoDialog=document.querySelector('#videoDialog'),player=document.querySelector('#player'),videoTitle=document.querySelector('#videoTitle'),videoDescription=document.querySelector('#videoDescription'),playlist=document.querySelector('#playlist');
 function play(src,name,button){player.src=src;player.setAttribute('aria-label',name);player.play().catch(()=>{});playlist.querySelectorAll('.clip').forEach(x=>x.classList.remove('active'));button.classList.add('active')}
